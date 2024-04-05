@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LOG IN</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('img.jpg');
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
+    }
+    
+    #abc{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size:xx-large;
+        text-align:center;
+        color:palevioletred;
+        font-weight: bolder;    
+        font-size:35px;
+    }
+
+    form {
+        
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px; 
+        display: inline-block;
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        width: calc(100% - 10px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #1108b4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color:#007bff;
+    }
+    
+    sup {
+        color: red;
+    }
+</style>
+  
+</head>
+<body> 
+    
+    <form action="hack5.html" method="submit">
+        <h1 id="abc">RetireReady</h1>
+        <h1>Log in</h1>
+        <label for="fname">First Name<sup>*</sup></label>
+        <input type="text" id="fname" name="fname" required placeholder="enter first name"><br>
+
+        <label for="lname">Last Name<sup>*</sup></label>
+        <input type="text" id="lname" name="lname" required placeholder="enter last name"><br>
+
+        <label for="email">Email id<sup>*</sup></label>
+        <input type="text" id="email" name="section" required placeholder="enter valid email id"><br>
+
+        <label for="pass">Create password<sup>*</sup></label>
+        <input type="password" id="pass" name="pass" required placeholder="enter password"><br><br>
+            
+        <button type="submit" id="submitButton">Submit</button>
+
+    </form>
+
+</body>
+</html>
