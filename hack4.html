@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hack4</title>
+</head>
+<body>
+    <b><p id="futureValue"></p></b>
+
+    <script>
+        window.onload = function() {
+            // Extracting the futureValue parameter from the URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var futureValue = urlParams.get('futureValue');
+
+            // Displaying the future value
+            document.getElementById("futureValue").textContent = "Future Value: " + futureValue;
+        };
+    </script>
+    
+</body>
+</html>

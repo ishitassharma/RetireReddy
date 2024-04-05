@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hack3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-position: center; 
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 700px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #1108b4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #007bff;
+        }
+        #abc{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size:xx-large;
+            text-align:center;
+            color:palevioletred;
+            font-weight: bolder;    
+            font-size:35px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="calculatorForm" onsubmit="myFunc(); return false;">
+        <h1 id="abc">RetireReady</h1>
+        <h2>Retirement Planning Calculator</h2>
+        <label for="gender">Gender:</label><br>
+        <input type="text" id="gender" name="gender" required><br>
+
+        <label for="currentAge">Current Age:</label><br>
+        <input type="number" id="currentAge" name="currentAge" required><br>
+
+        <label for="retirementAge">Years left to retire from current age:</label><br>
+        <input type="number" id="retirementAge" name="retirementAge" required><br>
+
+        <label for="lifeExpectancy">Life Expectancy:</label><br>
+        <input type="number" id="lifeExpectancy" name="lifeExpectancy" required><br>
+
+        <label for="monthlyIncome">Monthly Income Currently:</label><br>
+        <input type="number" id="monthlyIncome" name="monthlyIncome" required><br>
+
+        <label for="inflationRate">Expected Inflation Rate:</label><br>
+        <input type="number" id="inflationRate" name="inflationRate" required><br>
+
+        <label for="returnOnInvestment">Expected Return On Investment (Post-retirement):</label><br>
+        <input type="number" id="returnOnInvestment" name="returnOnInvestment" required><br>
+        <label for="existingSavingsCheckbox">Do You Have Any Existing Saving Or Investment For Retirement?</label><br>
+        <label for="Yes">Yes</label>
+        <input type="checkbox" id="existingSavingsCheckbox" name="existingSavingsCheckbox" value="Yes">
+        <label for="No">No</label>
+        <input type="checkbox" id="existingSavingsCheckbox" name="existingSavingsCheckbox" value="No">
+        <input type="number" id="existingSavingsAmount" name="existingSavingsAmount" placeholder="enter amount if yes " min="0"><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <script>
+        function myFunc() {
+            var PV = parseFloat(document.getElementById("existingSavingsAmount").value);
+            var r = parseFloat(document.getElementById("inflationRate").value);
+            var n = parseFloat(document.getElementById("retirementAge").value);
+    
+            var FV = PV * Math.pow((1 + r / 100), n); // Convert inflation rate to a percentage
+
+            // Redirect to hack4.html with future value as a parameter in the URL
+            window.location.href = "hack4.html?futureValue=" + FV.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
